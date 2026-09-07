@@ -30,9 +30,6 @@ x86 Assembly (MASM/EMU8086) — theory slides, lecture ASM code by topic, past p
 **Lab**
 - [COAL LAB](COAL%20LAB)
 
-**Senior Notes**
-- [Coal by senior](Coal%20by%20senior)
-
 ---
 
 💡 This is a coding-heavy course. Prioritize running the code yourself over just reading slides — the labs and class code folders are where the actual exam/viva material lives.
