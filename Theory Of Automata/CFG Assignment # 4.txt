@@ -1,0 +1,54 @@
+Question : {w ∈ {0, 1}* |  w does not start with 01 }
+
+R.E=(00+10+11)(1+0)^*
+S->AD
+S->BD
+S->CD
+S->null
+S->0
+S->1
+D->1D
+D->0D
+D->null
+A->00
+B->10
+C->11
+
+
+Question :All words that start with a and have even length over alphabet set {a, b}.
+
+R.E = a(a+b)((a+b)(a+b))^*
+
+S->aA
+S->aAX
+A->a
+A->b
+X->AAX
+X->null
+
+
+Question : All words that start with b and have odd length over alphabet set {a, b}.,.. 
+R.E= b((a+b)(a+b))^*
+S->b
+S->bX
+X->AAX
+X->null
+A->a
+A->b
+
+
+Question : { a^n b^m c^m d^2n | n >= 0, m > 0}.
+
+S->AB 
+A->aAdd
+A->null
+B->bBc
+B->bc
+
+
+Question : {a^i b^j c^k | i,j,k >= 0 and i + j = k}
+
+(Complete and corrected)
+S -> aSc
+S -> bSc
+S -> null

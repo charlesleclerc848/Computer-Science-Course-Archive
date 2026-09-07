@@ -1,0 +1,15 @@
+he image explains four ways to write system requirement specifications. Here’s a simplified explanation:
+
+Natural Language:
+Requirements are written as simple, numbered sentences in everyday language. Each sentence clearly describes one specific requirement.
+
+Structured Natural Language:
+Similar to natural language, but written in a consistent format or template. Each section provides specific information about a requirement, making it more organized.
+
+Graphical Notations:
+Diagrams and visuals (like flowcharts, UML diagrams) are used to show the system's requirements. These are easier to understand visually, especially for complex systems.
+
+Mathematical Specifications:
+Uses mathematical formulas or models (like finite-state machines) to define requirements. These are precise but harder for most people (like clients) to understand. They ensure no confusion but may not feel relatable to non-technical users.
+
+Would you like me to focus on any one of these?

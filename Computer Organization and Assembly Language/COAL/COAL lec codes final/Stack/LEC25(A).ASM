@@ -1,0 +1,47 @@
+.MODEL SMALL
+.STACK 100H
+.DATA 
+
+ARRAY DB 43H ,36H ,32H ,5AH ,38H ,39H
+
+
+
+.CODE 
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV BX,OFFSET ARRAY 
+    MOV SI,0
+    
+    
+    CALL DISPLAY
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP 
+
+DISPLAY PROC 
+    PUSH SI
+    PUSH AX
+    PUSH DX
+    
+    
+    
+@LOOP:    
+    MOV DL,ARRAY[SI]
+    MOV AH,02
+    INT 21H
+    
+    INC SI
+    
+    CMP SI,5
+    JBE @LOOP
+    
+    POP DX
+    POP AX
+    POP SI
+    
+    RET    
+DISPLAY ENDP
+END MAIN

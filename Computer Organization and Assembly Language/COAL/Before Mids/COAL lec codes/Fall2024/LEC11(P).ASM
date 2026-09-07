@@ -1,0 +1,39 @@
+.MODEL SMALL 
+.STACK 100H
+.DATA
+
+STRING1 DB "ENTER SEQUENCE OF 9 CHARACTERS $"
+NEWLINE DB 0AH,0DH,"$"
+VARQ DQ 234567812345678H  
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+                   
+                   
+    MOV AH,09H
+    MOV DX, OFFSET STRING1
+    INT 21H
+    
+    MOV AH,09H
+    MOV DX,OFFSET NEWLINE
+    INT 21H
+    
+    MOV CX,09H
+    CHECK:
+    CMP CX,0;SUB CX,0;XOR CX,0
+    JZ EXIT
+    
+    MOV AH,01H
+    INT 21H  
+    
+    DEC CX
+    JMP CHECK
+    
+    EXIT:
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

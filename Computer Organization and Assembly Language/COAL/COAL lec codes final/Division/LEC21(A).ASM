@@ -1,0 +1,37 @@
+ .MODEL SMALL
+ .STACK 100H
+ .DATA
+ 
+ 
+ DIVISOR DW 10
+ 
+ .CODE
+ MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    
+    XOR CX,CX
+    MOV AX,2345
+    
+@LOOP:
+    XOR DX,DX;XOR AH,AH
+    DIV DIVISOR
+    PUSH DX;PUSH AX
+    INC CX
+    CMP AL,0
+    JNE @LOOP
+    
+@LOOP2:
+    POP AX
+    MOV DL,AL
+    ADD DL,"0"
+    MOV AH,02
+    INT 21H
+    
+    LOOP @LOOP2
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+ END MAIN

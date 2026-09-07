@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daraz.pk - Online Shopping in Pakistan: Fashion, Electronics & Groceries</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Font Awesome (supplementary icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <!-- Custom CSS (External) -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Slider image overlay support */
+    .slide-placeholder {
+      position: relative;
+      overflow: hidden;
+    }
+    .slide-placeholder > div[style*="position:absolute"] {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       TOP BAR
+       ============================================================ -->
+  <div class="top-bar">
+    <div class="container-fluid px-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill text-warning"></i>
+          <span>Customer Care: <a href="#">0311-1112222</a></span>
+          <span class="divider">|</span>
+          <a href="#"><i class="bi bi-shop me-1"></i>Sell on Daraz</a>
+          <span class="divider d-none d-md-inline">|</span>
+          <a href="#" class="d-none d-md-inline"><i class="bi bi-box-seam me-1"></i>Track Order</a>
+          <span class="divider d-none d-md-inline">|</span>
+          <a href="#" class="d-none d-lg-inline"><i class="bi bi-download me-1"></i>Download App</a>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <span class="d-none d-md-inline">Follow us:</span>
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-youtube"></i></a>
+          <a href="#"><i class="bi bi-twitter-x"></i></a>
+          <span class="divider">|</span>
+          <a href="#"><i class="bi bi-globe me-1"></i>EN / PKR</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN HEADER
+       ============================================================ -->
+  <header class="main-header">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center gap-3">
+
+        <!-- Logo -->
+        <a href="#" class="daraz-logo text-decoration-none me-2">
+          <div>
+            <span class="logo-text">daraz</span>
+            <span class="logo-pk">.pk</span>
+          </div>
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-wrapper flex-grow-1 mx-2">
+          <select class="search-category-select">
+            <option>All Categories</option>
+            <option>Mobiles & Tablets</option>
+            <option>Electronics</option>
+            <option>Fashion</option>
+            <option>Home & Living</option>
+            <option>Sports</option>
+            <option>Groceries</option>
+            <option>Health & Beauty</option>
+            <option>Books</option>
+            <option>Toys & Games</option>
+          </select>
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search products, brands and categories"
+          />
+          <button class="search-btn">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+
+        <!-- Header Icons -->
+        <div class="header-icons d-flex align-items-center gap-3">
+
+          <!-- Account -->
+          <div class="header-icon-item d-none d-md-flex">
+            <i class="bi bi-person-circle"></i>
+            <span>Account</span>
+          </div>
+
+          <!-- Wishlist -->
+          <div class="header-icon-item d-none d-md-flex">
+            <i class="bi bi-heart"></i>
+            <span>Wishlist</span>
+          </div>
+
+          <!-- Cart -->
+          <div class="header-icon-item">
+            <div class="position-relative">
+              <i class="bi bi-bag" style="font-size:22px;"></i>
+              <span class="cart-badge">3</span>
+            </div>
+            <span>Cart</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       CATEGORY NAV
+       ============================================================ -->
+  <nav class="category-nav">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center overflow-auto" style="gap:0;">
+        <a class="nav-link active" href="#">
+          <i class="bi bi-grid-3x3-gap-fill"></i> All Categories
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-phone"></i> Mobiles
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-tv"></i> Electronics
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-person-dress"></i> Fashion
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-house"></i> Home &amp; Living
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-basket"></i> Groceries
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-heart-pulse"></i> Health &amp; Beauty
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-bicycle"></i> Sports
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-book"></i> Books
+        </a>
+        <a class="nav-link text-danger fw-bold" href="#">
+          <i class="bi bi-lightning-charge-fill"></i> 11.11 Sale
+        </a>
+        <a class="nav-link" href="#">
+          <i class="bi bi-shop-window"></i> Daraz Mall
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+       ============================================================ -->
+  <section class="hero-section">
+    <div class="container-fluid px-4">
+      <div class="row g-2">
+
+        <!-- Sidebar -->
+        <div class="col-lg-2 d-none d-lg-block">
+          <div class="sidebar-categories">
+            <div class="cat-title">
+              <i class="bi bi-grid-3x3-gap-fill"></i> All Categories
+            </div>
+            <ul>
+              <li><a href="#"><span><i class="bi bi-phone me-2 text-warning"></i>Mobiles &amp; Tablets</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-tv me-2 text-primary"></i>Electronics</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-person-dress me-2 text-danger"></i>Women's Fashion</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-person me-2" style="color:#0077b6"></i>Men's Fashion</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-house me-2 text-success"></i>Home &amp; Living</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-basket me-2 text-warning"></i>Groceries &amp; Pets</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-heart-pulse me-2 text-danger"></i>Health &amp; Beauty</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-bicycle me-2" style="color:#2d6a4f"></i>Sports &amp; Outdoors</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-tools me-2" style="color:#6c757d"></i>Tools &amp; DIY</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-controller me-2" style="color:#9b5de5"></i>Gaming</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-book me-2 text-info"></i>Books &amp; Stationery</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-emoji-smile me-2 text-warning"></i>Toys &amp; Games</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-car-front me-2" style="color:#e63946"></i>Automotive</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-camera me-2" style="color:#457b9d"></i>Cameras &amp; Photo</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+              <li><a href="#"><span><i class="bi bi-shop-window me-2" style="color:#f85606"></i>Daraz Mall</span><i class="bi bi-chevron-right text-muted" style="font-size:11px;"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Main Slider -->
+        <div class="col-lg-7 col-md-8 col-12">
+          <div id="heroCarousel" class="carousel slide hero-slider" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            </div>
+            <div class="carousel-inner">
+              <!-- Slide 1 -->
+              <div class="carousel-item active">
+                <div class="slide-placeholder" style="background-image: url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=900&h=400&fit=crop'); background-size:cover; background-position:center;">
+                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(248,86,6,0.78),rgba(255,159,28,0.6));"></div>
+                  <div style="position:relative;z-index:1;text-align:center;">
+                    <h2>⚡ 11.11 Mega Sale</h2>
+                    <p>Up to 90% Off on Millions of Products</p>
+                    <button class="slide-btn">Shop Now →</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 2 -->
+              <div class="carousel-item">
+                <div class="slide-placeholder" style="background-image: url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900&h=400&fit=crop'); background-size:cover; background-position:center;">
+                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,26,46,0.82),rgba(15,52,96,0.7));"></div>
+                  <div style="position:relative;z-index:1;text-align:center;">
+                    <h2>📱 Latest Smartphones</h2>
+                    <p>Samsung, iPhone, Xiaomi &amp; More — Best Prices</p>
+                    <button class="slide-btn">Explore Now →</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 3 -->
+              <div class="carousel-item">
+                <div class="slide-placeholder" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?w=900&h=400&fit=crop'); background-size:cover; background-position:center;">
+                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(45,106,79,0.82),rgba(82,183,136,0.65));"></div>
+                  <div style="position:relative;z-index:1;text-align:center;">
+                    <h2>🛒 Groceries Delivered</h2>
+                    <p>Fresh Essentials at Your Doorstep Nationwide</p>
+                    <button class="slide-btn">Order Now →</button>
+                  </div>
+                </div>
+              </div>
+              <!-- Slide 4 -->
+              <div class="carousel-item">
+                <div class="slide-placeholder" style="background-image: url('https://images.unsplash.com/photo-1483985988355-763728e1935b?w=900&h=400&fit=crop'); background-size:cover; background-position:center top;">
+                  <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(155,34,38,0.80),rgba(230,57,70,0.65));"></div>
+                  <div style="position:relative;z-index:1;text-align:center;">
+                    <h2>👗 Fashion Week</h2>
+                    <p>Trending Styles for Men, Women &amp; Kids</p>
+                    <button class="slide-btn">Browse Fashion →</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Side Banners -->
+        <div class="col-lg-3 col-md-4 d-none d-md-block">
+          <div class="side-banners d-flex flex-column gap-2 h-100">
+            <div class="mini-banner" style="background: linear-gradient(135deg,#6a0572,#c77dff);">
+              <h5>🎁 Gift Cards</h5>
+              <small>The Perfect Gift for Everyone</small>
+              <button class="promo-btn mt-2">Shop Now</button>
+            </div>
+            <div class="mini-banner" style="background: linear-gradient(135deg,#023e8a,#4895ef);">
+              <h5>🔌 Appliances</h5>
+              <small>Up to 40% Off Major Brands</small>
+              <button class="promo-btn mt-2">Explore</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FLASH SALE COUNTDOWN
+       ============================================================ -->
+  <div class="flash-sale-bar">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center gap-3">
+          <div class="flash-label">
+            <i class="bi bi-lightning-charge-fill"></i> FLASH SALE
+          </div>
+          <span class="text-white fw-semibold" style="font-size:13px;">Deals end in:</span>
+          <div class="countdown">
+            <div>
+              <div class="countdown-box" id="countdown-h">05</div>
+              <span class="countdown-label">HRS</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div>
+              <div class="countdown-box" id="countdown-m">34</div>
+              <span class="countdown-label">MIN</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div>
+              <div class="countdown-box" id="countdown-s">22</div>
+              <span class="countdown-label">SEC</span>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="text-warning fw-bold" style="font-size:13px;">
+          See All Flash Deals <i class="bi bi-arrow-right-circle-fill ms-1"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SHOP BY CATEGORY
+       ============================================================ -->
+  <div class="container-fluid px-4 mt-3">
+    <div class="category-grid-section">
+      <div class="section-header">
+        <h2><i class="bi bi-grid-3x3-gap-fill"></i> Shop by Category</h2>
+        <a href="#" class="view-all">View All <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row row-cols-3 row-cols-sm-4 row-cols-md-6 row-cols-lg-10 g-2">
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#ff9800,#f44336);">
+              <i class="bi bi-phone-fill"></i>
+            </div>
+            <span>Mobiles</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#2196f3,#673ab7);">
+              <i class="bi bi-laptop-fill"></i>
+            </div>
+            <span>Laptops</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#e91e63,#ff5722);">
+              <i class="bi bi-bag-heart-fill"></i>
+            </div>
+            <span>Fashion</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#4caf50,#8bc34a);">
+              <i class="bi bi-house-fill"></i>
+            </div>
+            <span>Home Living</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#ff6b35,#f7c59f);">
+              <i class="bi bi-basket2-fill"></i>
+            </div>
+            <span>Groceries</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#d63384,#fd7e14);">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+            <span>Health Beauty</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#0dcaf0,#0d6efd);">
+              <i class="bi bi-tv-fill"></i>
+            </div>
+            <span>Electronics</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#198754,#20c997);">
+              <i class="bi bi-bicycle"></i>
+            </div>
+            <span>Sports</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#9c27b0,#e91e63);">
+              <i class="bi bi-controller"></i>
+            </div>
+            <span>Gaming</span>
+          </div>
+        </div>
+        <div class="col text-center">
+          <div class="category-icon-item">
+            <div class="icon-circle" style="background:linear-gradient(135deg,#607d8b,#90a4ae);">
+              <i class="bi bi-car-front-fill"></i>
+            </div>
+            <span>Automotive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLASH SALE PRODUCTS
+       ============================================================ -->
+  <div class="container-fluid px-4">
+    <div class="content-section">
+      <div class="section-header">
+        <h2><i class="bi bi-lightning-charge-fill text-danger"></i> Flash Sale</h2>
+        <a href="#" class="view-all">View All <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2">
+
+        <!-- Product Card 1 -->
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-52%</span>
+              <img src="https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=300&h=300&fit=crop" alt="Samsung A15" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Samsung Galaxy A15 5G 128GB</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 32,999</span>
+                <span class="price-original">Rs 68,000</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-count">(1.2k)</span>
+              </div>
+              <div class="sold-count">4,321 sold</div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 2 -->
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-30%</span>
+              <span class="badge-new">NEW</span>
+              <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=300&h=300&fit=crop" alt="Xiaomi Buds" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Xiaomi Redmi Buds 5 Wireless Earphones</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 3,499</span>
+                <span class="price-original">Rs 4,999</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(876)</span>
+              </div>
+              <div class="sold-count">2,100 sold</div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 3 -->
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-45%</span>
+              <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=300&h=300&fit=crop" alt="Smart Watch" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Smart Watch Fitness Tracker IP68 Waterproof</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 1,899</span>
+                <span class="price-original">Rs 3,450</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="rating-count">(3.4k)</span>
+              </div>
+              <div class="sold-count">8,900 sold</div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 4 -->
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-20%</span>
+              <img src="https://images.unsplash.com/photo-1648821240889-7abf0d2abe0f?w=300&h=300&fit=crop" alt="Air Fryer" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Digital Air Fryer 4.5L Non-Stick Basket</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 6,499</span>
+                <span class="price-original">Rs 8,100</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(540)</span>
+              </div>
+              <div class="sold-count">1,230 sold</div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 5 -->
+        <div class="col d-none d-sm-block">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-60%</span>
+              <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=300&h=300&fit=crop" alt="Women Dress" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Women's Chiffon Floral Summer Maxi Dress</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 1,299</span>
+                <span class="price-original">Rs 3,250</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-count">(2.1k)</span>
+              </div>
+              <div class="sold-count">5,670 sold</div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Card 6 -->
+        <div class="col d-none d-lg-block">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-35%</span>
+              <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300&h=300&fit=crop" alt="Bluetooth Speaker" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">JBL-Style Bluetooth Speaker Portable Waterproof</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 2,799</span>
+                <span class="price-original">Rs 4,300</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(687)</span>
+              </div>
+              <div class="sold-count">3,200 sold</div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PROMO BANNERS ROW
+       ============================================================ -->
+  <div class="container-fluid px-4">
+    <div class="promo-banners">
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="promo-banner" style="background: linear-gradient(135deg,#f85606,#ffb347);">
+            <div class="promo-text">
+              <h3>🚚 Free Delivery</h3>
+              <p>On orders above Rs 2,000</p>
+              <button class="promo-btn mt-2">Shop Now</button>
+            </div>
+            <i class="promo-icon bi bi-truck"></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="promo-banner" style="background: linear-gradient(135deg,#6a0572,#ab47bc);">
+            <div class="promo-text">
+              <h3>💳 Easy Installments</h3>
+              <p>0% markup on credit cards</p>
+              <button class="promo-btn mt-2">Learn More</button>
+            </div>
+            <i class="promo-icon bi bi-credit-card"></i>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="promo-banner" style="background: linear-gradient(135deg,#023e8a,#4895ef);">
+            <div class="promo-text">
+              <h3>🔄 Easy Returns</h3>
+              <p>7-day hassle-free returns</p>
+              <button class="promo-btn mt-2">Details</button>
+            </div>
+            <i class="promo-icon bi bi-arrow-repeat"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TRENDING NOW / BEST SELLERS
+       ============================================================ -->
+  <div class="container-fluid px-4">
+    <div class="content-section">
+      <div class="section-header">
+        <h2><i class="bi bi-fire"></i> Trending Now</h2>
+        <a href="#" class="view-all">View All <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2">
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=300&h=300&fit=crop" alt="Laptop" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">HP Core i5 11th Gen 8GB RAM 256GB SSD Laptop</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 89,999</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-count">(412)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-15%</span>
+              <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300&h=300&fit=crop" alt="Shoes" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Nike Air Max Men's Running Shoes Size 40-46</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 8,499</span>
+                <span class="price-original">Rs 9,999</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(990)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1541643600914-78b084683702?w=300&h=300&fit=crop" alt="Perfume" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Armaf Club De Nuit Intense EDP 105ml Men</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 4,200</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="rating-count">(1.8k)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-25%</span>
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300&h=300&fit=crop" alt="Camera" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Canon EOS M50 Mirrorless Camera 24MP Kit</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 149,999</span>
+                <span class="price-original">Rs 199,999</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-count">(222)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-none d-sm-block">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=300&h=300&fit=crop" alt="Skincare" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">The Ordinary Niacinamide 10% Zinc 1% Serum 30ml</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 2,499</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-count">(4.2k)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-none d-lg-block">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-40%</span>
+              <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300&h=300&fit=crop" alt="Headphones" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Sony WH-1000XM5 Noise Cancelling Headphones</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 59,999</span>
+                <span class="price-original">Rs 99,999</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="rating-count">(3.1k)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DARAZ MALL
+       ============================================================ -->
+  <div class="container-fluid px-4">
+    <div class="mall-section-bg">
+      <div class="d-flex align-items-center justify-content-between mb-3 flex-wrap gap-2">
+        <div>
+          <div class="mall-badge"><i class="bi bi-shield-check-fill"></i> DARAZ MALL</div>
+          <h2 class="fw-900 fs-5 mt-1">100% Authentic Products</h2>
+          <p class="text-muted" style="font-size:12px;">Official stores with guaranteed authenticity</p>
+        </div>
+        <a href="#" class="view-all">View All Stores <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-5 row-cols-lg-8 g-2">
+        <div class="col"><div class="brand-card">Samsung</div></div>
+        <div class="col"><div class="brand-card">Apple</div></div>
+        <div class="col"><div class="brand-card">Xiaomi</div></div>
+        <div class="col"><div class="brand-card">Haier</div></div>
+        <div class="col"><div class="brand-card">L'Oreal</div></div>
+        <div class="col d-none d-md-block"><div class="brand-card">Unilever</div></div>
+        <div class="col d-none d-lg-block"><div class="brand-card">P&amp;G</div></div>
+        <div class="col d-none d-lg-block"><div class="brand-card">Nike</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       JUST FOR YOU (RECOMMENDED)
+       ============================================================ -->
+  <div class="container-fluid px-4">
+    <div class="content-section">
+      <div class="section-header">
+        <h2><i class="bi bi-stars"></i> Just For You</h2>
+        <a href="#" class="view-all">View All <i class="bi bi-arrow-right"></i></a>
+      </div>
+      <div class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6 g-2">
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?w=300&h=300&fit=crop" alt="Gaming Chair" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Ergonomic Gaming Chair with Lumbar Support</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 12,499</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(234)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-18%</span>
+              <img src="https://images.unsplash.com/photo-1593095948071-474c5cc2989d?w=300&h=300&fit=crop" alt="Protein" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Optimum Nutrition Gold Standard Whey 5lbs Chocolate</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 22,500</span>
+                <span class="price-original">Rs 27,000</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i>
+                </div>
+                <span class="rating-count">(871)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=300&h=300&fit=crop" alt="Handbag" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Women's Leather Tote Bag Office Shoulder Handbag</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 3,999</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-half"></i>
+                </div>
+                <span class="rating-count">(1.5k)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-28%</span>
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=300&h=300&fit=crop" alt="Mixer" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Anex Stand Mixer AG-3055 1000W 7 Speed Bowl</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 9,999</span>
+                <span class="price-original">Rs 13,900</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(389)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-none d-sm-block">
+          <div class="product-card">
+            <div class="img-wrap">
+              <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=300&h=300&fit=crop" alt="Backpack" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Waterproof 30L Travel Hiking Backpack USB Port</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 2,199</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-half"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(612)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-none d-lg-block">
+          <div class="product-card">
+            <div class="img-wrap">
+              <span class="badge-discount">-22%</span>
+              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=300&fit=crop" alt="Watch" />
+            </div>
+            <div class="card-body">
+              <div class="product-name">Casual Analogue Men's Wrist Watch Leather Strap</div>
+              <div class="price-wrap">
+                <span class="price-current">Rs 1,549</span>
+                <span class="price-original">Rs 1,990</span>
+              </div>
+              <div class="rating-wrap">
+                <div class="stars">
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star"></i>
+                </div>
+                <span class="rating-count">(2.3k)</span>
+              </div>
+              <button class="cart-btn"><i class="bi bi-cart-plus me-1"></i>Add to Cart</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TRUST / SERVICE BADGES
+       ============================================================ -->
+  <div class="container-fluid px-4">
+    <div class="trust-section">
+      <div class="row g-0">
+        <div class="col-6 col-md-3 border-end">
+          <div class="trust-item px-3">
+            <div class="trust-icon"><i class="bi bi-truck"></i></div>
+            <div>
+              <h6>Nationwide Delivery</h6>
+              <p>Delivering to all cities in Pakistan</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 border-end">
+          <div class="trust-item px-3">
+            <div class="trust-icon"><i class="bi bi-shield-lock-fill"></i></div>
+            <div>
+              <h6>Secure Payments</h6>
+              <p>100% secure payment methods</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 border-end">
+          <div class="trust-item px-3">
+            <div class="trust-icon"><i class="bi bi-arrow-repeat"></i></div>
+            <div>
+              <h6>Easy Returns</h6>
+              <p>7-day hassle-free return policy</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="trust-item px-3">
+            <div class="trust-icon"><i class="bi bi-headset"></i></div>
+            <div>
+              <h6>24/7 Support</h6>
+              <p>Live chat &amp; phone support</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       APP DOWNLOAD BANNER
+       ============================================================ -->
+  <div class="container-fluid px-4 mb-3">
+    <div class="app-download-banner">
+      <div>
+        <h3>📱 Get the Daraz App</h3>
+        <p>Exclusive app-only deals &amp; faster checkout. 10+ million products!</p>
+        <div class="app-store-btns mt-3">
+          <button class="app-store-btn">
+            <i class="bi bi-apple"></i>
+            <div>
+              <small>Download on the</small>
+              <strong>App Store</strong>
+            </div>
+          </button>
+          <button class="app-store-btn">
+            <i class="bi bi-google-play"></i>
+            <div>
+              <small>Get it on</small>
+              <strong>Google Play</strong>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="d-none d-md-block text-center">
+        <div style="font-size: 80px; opacity: 0.85;">📲</div>
+        <p class="mt-0" style="font-size:12px; opacity:0.8;">Scan QR to download</p>
+        <div style="background:white; padding:8px; border-radius:8px; display:inline-block;">
+          <div style="width:70px;height:70px;background:repeating-conic-gradient(#f85606 0% 25%, white 0% 50%) 0 / 10px 10px; border-radius:4px;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="main-footer">
+    <div class="container-fluid px-4">
+      <div class="row g-4">
+
+        <!-- About Column -->
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-logo-text mb-2">daraz<span style="font-size:18px;">.pk</span></div>
+          <p style="font-size:12.5px; color:#999; line-height:1.7;">
+            Pakistan's #1 online shopping platform. Shop from 15+ million products with cash on delivery, fast shipping, and easy returns.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-youtube"></i></a>
+            <a href="#"><i class="bi bi-twitter-x"></i></a>
+            <a href="#"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="col-lg-2 col-md-6">
+          <h5>Customer Service</h5>
+          <ul>
+            <li><a href="#">Help Centre</a></li>
+            <li><a href="#">Track My Order</a></li>
+            <li><a href="#">Return &amp; Refund Policy</a></li>
+            <li><a href="#">Report a Problem</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Live Chat Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Daraz -->
+        <div class="col-lg-2 col-md-6">
+          <h5>About Daraz</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Sell on Daraz</a></li>
+            <li><a href="#">Daraz Affiliates</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+
+        <!-- Payment & Delivery -->
+        <div class="col-lg-2 col-md-6">
+          <h5>Payment Methods</h5>
+          <div class="footer-payment">
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">MasterCard</span>
+            <span class="payment-badge">JazzCash</span>
+            <span class="payment-badge">EasyPaisa</span>
+            <span class="payment-badge">COD</span>
+            <span class="payment-badge">Bank Transfer</span>
+          </div>
+          <h5 class="mt-3">Download App</h5>
+          <div class="d-flex flex-column gap-2">
+            <a href="#" style="color:#aaa; display:flex; align-items:center; gap:6px; font-size:12px;">
+              <i class="bi bi-apple" style="font-size:18px;"></i> App Store
+            </a>
+            <a href="#" style="color:#aaa; display:flex; align-items:center; gap:6px; font-size:12px;">
+              <i class="bi bi-google-play" style="font-size:18px;"></i> Google Play
+            </a>
+          </div>
+        </div>
+
+        <!-- Popular Categories -->
+        <div class="col-lg-3 col-md-6">
+          <h5>Popular Categories</h5>
+          <ul>
+            <li><a href="#">Mobiles &amp; Tablets</a></li>
+            <li><a href="#">Laptops &amp; Computers</a></li>
+            <li><a href="#">Women's Clothing</a></li>
+            <li><a href="#">Men's Clothing</a></li>
+            <li><a href="#">Home Appliances</a></li>
+            <li><a href="#">Baby Products</a></li>
+            <li><a href="#">Sports &amp; Outdoors</a></li>
+            <li><a href="#">Groceries &amp; Pets</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container-fluid px-4">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+          <span>© 2024 Daraz Pakistan. All rights reserved.</span>
+          <div class="d-flex gap-3">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+            <a href="#">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Countdown Script -->
+  <script>
+    // Flash sale countdown timer
+    let totalSeconds = 5 * 3600 + 34 * 60 + 22;
+
+    function updateCountdown() {
+      if (totalSeconds <= 0) {
+        totalSeconds = 24 * 3600; // reset
+      }
+      const h = Math.floor(totalSeconds / 3600);
+      const m = Math.floor((totalSeconds % 3600) / 60);
+      const s = totalSeconds % 60;
+
+      document.getElementById('countdown-h').textContent = String(h).padStart(2, '0');
+      document.getElementById('countdown-m').textContent = String(m).padStart(2, '0');
+      document.getElementById('countdown-s').textContent = String(s).padStart(2, '0');
+
+      totalSeconds--;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // Cart button interaction
+    document.querySelectorAll('.cart-btn').forEach(btn => {
+      btn.addEventListener('click', function () {
+        this.innerHTML = '<i class="bi bi-check-lg me-1"></i> Added!';
+        this.style.background = '#00b140';
+        const badge = document.querySelector('.cart-badge');
+        badge.textContent = parseInt(badge.textContent) + 1;
+        setTimeout(() => {
+          this.innerHTML = '<i class="bi bi-cart-plus me-1"></i>Add to Cart';
+          this.style.background = '';
+        }, 1500);
+      });
+    });
+  </script>
+
+</body>
+</html>

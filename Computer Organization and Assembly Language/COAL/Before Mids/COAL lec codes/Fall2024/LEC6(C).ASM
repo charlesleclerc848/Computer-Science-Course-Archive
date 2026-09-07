@@ -1,0 +1,26 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+;arrays in assembly language
+ARRAY DB 23H,47H,67H,34H,"C"
+ARRAY2 DB "COAL COAL COAL $" 
+ARRAY3 DB 15 DUP("$")
+
+
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV DX,OFFSET ARRAY2
+    MOV AH,09
+    INT 21H    
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN
+    
+    
+    

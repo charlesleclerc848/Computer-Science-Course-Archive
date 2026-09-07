@@ -1,0 +1,40 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+DIVISOR DB 10
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AX,24h
+    XOR CL,CL
+@LOOP:    
+    XOR AH,AH
+    DIV DIVISOR
+    PUSH AX
+    INC CL
+    CMP AL,0
+    JNE @LOOP
+    
+    
+    
+@DISPLAY:
+    POP BX
+    MOV DL,BH
+    ADD DL,30H 
+    MOV AH,02
+    INT 21H
+    DEC CL
+    JNZ @DISPLAY
+    
+    
+    
+    
+    MOV AH,4CH 
+    INT 21H
+MAIN ENDP
+END MAIN

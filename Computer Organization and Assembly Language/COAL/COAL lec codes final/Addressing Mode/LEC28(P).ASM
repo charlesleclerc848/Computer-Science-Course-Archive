@@ -1,0 +1,56 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+                               
+                               
+ARRAY DB 1,2,4,2,5,4,3,2,1,2,3,"$"
+LEN EQU $-ARRAY-1
+
+UNIQUE DB LEN DUP("$")
+FREQUENCY DB LEN DUP (0)
+
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    LEA BX,ARRAY
+
+    
+@LOOP:    
+    CMP BYTE PTR [BX],"$" 
+    JE @EXIT 
+    
+    ;CHECK THE DUPLICATE IF EXIST THEN INCREMENT THE CORRESPONDING VALUE IN FREQUENCY OTHERWISE REPLACE THE LAST $ SIGN
+    
+    MOV AL,[BX]
+    LEA SI,UNIQUE
+    LEA DI,FREQUENCY
+@CHECKAGAIN:    
+    CMP AL,[SI]
+    JE @INCDI 
+    
+    CMP BYTE PTR [SI],"$" 
+    JE @PLACE
+    INC SI
+    INC DI
+    JMP @CHECKAGAIN
+    
+@INCDI:
+    INC [DI] 
+    JMP @UPDATEBX
+@PLACE:
+    MOV [SI],AL 
+    INC [DI]
+@UPDATEBX:       
+    INC BX
+    JMP @LOOP
+    
+    
+@EXIT:  
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

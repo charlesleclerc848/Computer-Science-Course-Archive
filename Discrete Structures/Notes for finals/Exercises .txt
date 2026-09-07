@@ -1,0 +1,44 @@
+Sets
+2.1 done
+2.2  (Q#16 to 19 pend)
+Sequences And Summition
+2.4   (both done from book)
+Induction 
+5.1
+5.2
+Counting
+6.1
+6.2
+6.3
+Relations
+9.1
+9.3
+Trees
+11.1
+11.3
+Number theory
+4.3
+
+\\\\\\\\\\\\\\\
+ex with no questions
+5.2
+6.2
+9.1(Only 1 question)
+9.3
+11.1
+11.3
+4.3
+\\\\\\\\\\\\\\\\\\\\
+
+Your final term Includes:
+
+
+1.Number theory,Gcd From Mids also Included (done from slides)  ++++++ 
+2.sets(done from book) ++++++
+3.Relations,(done from slides)  ++++++
+4.Trees ,(done from slides)  ++++++
+5.Graphs,(excluded) 
+6.Counting ,(done from slides)(6.1 done)  ++++++
+7.Mathematical Induction,(reviewed from book) reviewd
+8.Sequences, (done)  ++++++
+9.Summations , (done from slides, done from book)++++++

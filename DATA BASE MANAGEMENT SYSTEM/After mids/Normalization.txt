@@ -1,0 +1,222 @@
+
+
+
+
+
+2NF-> 1stNF + There should be no partial dependency in the table.
+
+partial dependency------> FD: Proper subset of CK -> Non-prime attribute
+
+
+Proper subset of CK--------------> CK------------> superkey--------> closureSet.
+			PA,NPA
+
+	R(A B C D E F)
+	FD: {A->B, B->C, C->D, D->E}
+	ByTrans	A->C,	A->D,	A->E
+		
+	ABCDEF+ ={A B C D E F}
+SK	AF+={A B C D E F}
+CK	{A F}
+
+PA	{A,F}
+NPA	{B, C, D, E}
+	
+	A+={A B C D E}  NaSK
+	F+={F} NaSK
+
+Partial Dependencies {A->B}
+
+Not in 2nd NF due to Partial Dependencies {A->B}
+
+
+=======================================================================================================
+
+
+	R(A B C D)
+	FD: {AB->CD, C->A, D->B}
+	ByTrans	
+		
+	ABCD+ ={A B C D}
+SK	AB+ ={A B C D} ---------------->	CK
+CK	{A B,	C B, A D}						A B
+	A+={A}	NaSK
+	B+={B}	NaSK
+
+SK	CB	------------------>		CK
+	C+={C A }NaSK
+	B+={B}	NaSK
+
+SK	AD	------------------->		CK
+	A+={A}	NaSK
+	D+={DB}	NaSK
+
+
+
+PA={A,B,C,D}	
+NPA={}
+
+this table is in 2nd NF.
+
+
+=====================================================
+	A		B		C	D		E		F	  G	H		I
+R = (Customer No, Customer Name, Property No, Property Address, Rent Start, Rent Finish, Rent, Owner No, Owner Name) with the following functional dependencies: 
+•	Customer No, Property No -> Rent Start, Rent Finish
+		A,C->	E F
+
+•	Customer No -> Customer Name
+		A->B
+
+•	Property No -> Property Address, Rent, Owner No, Owner Name
+		C->D G H I
+•	Owner No -> Owner Name 
+		H->I
+
+FD:	{A,C->	E F		A->B		C->D G H I		H->I}
+
+	ABCDEFGHI+={ABCDEFGHI}
+SK	AC+={ACEFBDGHI}
+CK	AC			
+	A+={AB}	NaSK
+	C+={CDGHI}	NaSK
+
+PA{A,C}
+NPA{B,D,E,F,G,H,I}
+				A,C	->	B,D,E,F,G,H,I
+partial dependency------> FD: Proper subset of CK -> Non-prime attribute
+
+partial dependency------>	A->B,	C->D G H I		Customer No -> Customer Name		Property No -> Property Address, Rent, Owner No, Owner Name
+
+2NF	Remove the Partial Dependency
+
+
+============================================================================
+
+	3NF---->>>	1-Table is in 2NF	2-No-Transitive Dependency	(NPA -> NPA)
+
+	3NF---->>>>>	1-LHS is a SK		2-RHS is a PA
+
+					TD	TD
+	R(A B C D)	FD:{A->B,	B->C,	C->D}
+
+	ABCD+=ABCD
+SK	A+={ACDB}------>	CK
+
+
+
+CK={A}
+PA={A}
+NPA={B,C,D}
+
+Because of B->C,	C->D	table is not in 3NF
+
+
+
+========================================
+				TD		Not in 3NF
+R(ABCDEF)	FD:{AB->CDEF,	BD->F}
+
+
+	ABCDEF+=ABCDEF
+SK	AB+=ABCDEF	-------->	CK
+
+properSubsetof	AB	A+={A}
+			B+={B}
+
+PA={A,B,}
+NPA={C,D,E,F}
+
+
+========================================================================
+BCNF	(Boyce	Codd	Normal	Form)
+
+CK	AB	BC	DC
+
+	1-3NF		2-For each non-trival dependency the LHS must be SK.	(if X->Y then X should be a SK)
+
+
+	R(ABCDE)	FD:{A->BCDE,	BC->ACE,	D->E	}
+	ABCDE+=ABCDE
+SK	A+=ABCDE	------->CK
+
+SK	BC+={BCAED}	----->CK	
+	B+={B}			C+={C}
+							BC
+					replacement	AC
+					replacement	BA
+
+CK={A,BC,}
+
+PA={A,B,C}
+NPA={}	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A->B	B->C	A->C
+
+
+
+
+
+
+
+SID	|SName	|DOB	|City	|County	|PostCode|TotalCredit
+----	|	|	|	|	|	|
+1	|A	|-	|LHR	|Pak	|40137	|3
+2	|B	|-	|LHR	|Pak	|40137	|3
+3	|C	|-	|LHR	|Pak	|40137	|3
+4	|D	|-	|ISB	|Pak	|401235	|3
+
+PinCode -> City, Country		(Transitive Dependency)
+
+NPA -> NPA
+
+
+
+A table is in 3rd NF if and only if for each of iys non-trival FD at least one of the following condition holds
+1-LHS is a SK
+2-RHS is a PA
+
+	or
+
+1-It is in 2nd NF
+2-No Transitive Dependency occurs i.e.   NPA -> NPA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+

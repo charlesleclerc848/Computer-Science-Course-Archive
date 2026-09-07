@@ -1,0 +1,8 @@
+1. Dsa important topic graph traversal.
+2. DSA important topic AVL deletion.
+3. Until now avl and max heap are past papers questions.
+4. Very important topic DSA balanced bst.
+5. Dsa very important tree data structure 
+Both code and algorithm.
+6. Important dsa lab 10 task 3,4.
+7. Dsa important queue via linked list important

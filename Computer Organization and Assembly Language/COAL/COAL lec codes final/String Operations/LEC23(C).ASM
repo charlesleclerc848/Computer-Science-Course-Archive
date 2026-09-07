@@ -1,0 +1,42 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+STRING1 DB "HELLO$"
+LEN EQU $-STRING1
+STRING2 DB LEN DUP("$")
+STRING3 DB 2*LEN DUP ("$")
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    MOV ES,AX
+    
+    MOV SI,OFFSET STRING1
+    MOV DI,OFFSET STRING2
+    
+    MOV CX,LEN-1
+    
+    REP MOVSB
+    
+    MOV DI,OFFSET STRING3
+    MOV CX,2*LEN-1
+    MOV AH,01
+@LOOP:    
+    INT 21H    
+    STOSB
+    LOOP @LOOP 
+    
+    MOV DX,OFFSET STRING3
+    MOV AH,09
+    INT 21H
+    
+    
+    
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

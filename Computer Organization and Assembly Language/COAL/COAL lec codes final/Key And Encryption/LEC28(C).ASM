@@ -1,0 +1,37 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+       ;ABCDEFGHIJKLMNOPQRSTUVWXYZ
+KEY DB "XQPOGHZBCADEIJUVFMNKLRSTWY"
+NEWLINE DB 0AH,0DH, "$"
+ENCRYPTED DB 60 DUP ("$")
+
+.CODE   
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX  
+    
+    MOV DI,OFFSET ENCRYPTED  
+    MOV BX,OFFSET KEY
+@LOOP:   
+    MOV AH,01H
+    INT 21H
+    CMP AL,0DH ; Check if the input is carraige returrn
+    JE @DISPLAY 
+    SUB AL,"A" 
+    
+    XLAT
+    MOV [DI],AL
+    INC DI
+    JMP @LOOP
+
+@DISPLAY:    
+    MOV DX,OFFSET ENCRYPTED
+    MOV AH,09
+    INT 21H                 
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN
+ 

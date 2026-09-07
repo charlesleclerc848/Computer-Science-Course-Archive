@@ -1,0 +1,45 @@
+     1
+    121
+   12321
+  1234321
+ 123454321
+
+
+#include <iostream>
+using namespace std;
+int main(){
+	int r,s,y=1;
+	int e=1;
+	cout<<"Enter Number of Rows:";
+	cin>>r;
+	y=r;
+	while(y>0)
+	{
+	s=y-1;
+	while(s>=0)
+	{
+		cout<<" ";
+		s--;
+	}
+	int k=1;
+	while(k<=e)
+	{
+		cout<<k;
+		k++;
+	}
+	int h;
+	h=e-1;
+	while(h>0)
+	{
+		cout<<h;
+		h--;
+	}
+	
+	cout<<endl;
+	y--;
+	e++;
+	
+}
+	return 0;
+	
+}

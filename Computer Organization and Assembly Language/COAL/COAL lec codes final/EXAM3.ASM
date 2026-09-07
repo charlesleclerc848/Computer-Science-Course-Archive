@@ -1,0 +1,31 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+EXAM DB "GUYS, BEST WISHES FOR THE EXAMS $" 
+EATN DB 100 DUP ("$")
+
+.CODE
+MAIN PROC
+   MOV AX,@DATA
+   MOV DS,AX
+   
+   MOV AH,01
+   MOV BX,OFFSET EATN
+   
+@LOOP:   
+   INT 21H
+   MOV [BX], AL 
+   CMP AL,"$"
+   JNE @LOOP
+   
+   
+   
+   
+   
+   
+   
+   
+   MOV AH,4CH
+   INT 21H
+MAIN ENDP
+END MAIN

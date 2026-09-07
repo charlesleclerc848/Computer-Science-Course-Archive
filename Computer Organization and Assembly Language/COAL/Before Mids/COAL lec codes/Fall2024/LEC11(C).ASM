@@ -1,0 +1,49 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+STRING1 DB "INPUT SEQUENCE OF CHARACTERS TERMINATED BY SPACE$"
+NEWLINE DB 0AH,0DH,"$"
+
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    ;string display 
+    
+    MOV AH,09
+    MOV DX,OFFSET STRING1
+    INT 21H 
+    
+    ;NEWLINE
+    MOV AH,02
+    MOV DL,0AH
+    INT 21H
+    
+    MOV AH,02
+    MOV DL,0DH
+    INT 21H 
+    ;ANOTHER METHOD FOR NEWLINE
+    
+    MOV AH,09
+    MOV DX,OFFSET NEWLINE
+    INT 21H
+    
+    ;SEQUENCE OF CHARACTERS
+    
+    INPUT:
+    MOV AH,01
+    INT 21H
+    
+    CMP AL," " ;SUB AL," " ;XOR AL," "
+    JZ EXIT
+    JMP INPUT
+    
+    
+    
+    EXIT:    
+    MOV AH,4CH 
+    INT 21H
+MAIN ENDP
+END MAIN

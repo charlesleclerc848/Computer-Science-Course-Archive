@@ -1,0 +1,52 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+DIVISOR DB 10
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    XOR CX,CX
+    MOV AX,248
+    
+    CALL OUTDEC               
+                   
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+
+OUTDEC PROC
+;INPUT AX
+;DISPLAY THE AX VALUE IN DECIMAL FORMAT
+PUSH AX
+PUSH CX
+PUSH DX
+
+@LOOP:    
+    XOR AH,AH
+    DIV DIVISOR
+    PUSH AX
+    INC CL
+    CMP AL,0
+    JNE @LOOP
+    
+@DISPLAY:    
+    POP AX
+    MOV DL,AH
+    ADD DL,30H
+    MOV AH,02
+    INT 21H
+    
+    LOOP @DISPLAY
+
+POP DX
+POP CX
+POP AX 
+
+OUTDEC ENDP
+
+
+END MAIN

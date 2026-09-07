@@ -1,0 +1,552 @@
+Conversion Problems
+Convert DFA to Regular Expression:
+
+Given the DFA:
+States: 
+𝑞
+0
+,
+𝑞
+1
+q 
+0
+​
+ ,q 
+1
+​
+ 
+Transitions:
+𝑞
+0
+→
+𝑎
+𝑞
+1
+q 
+0
+​
+  
+a
+​
+ q 
+1
+​
+ , 
+𝑞
+0
+→
+𝑏
+𝑞
+0
+q 
+0
+​
+  
+b
+​
+ q 
+0
+​
+ 
+𝑞
+1
+→
+𝑏
+𝑞
+0
+q 
+1
+​
+  
+b
+​
+ q 
+0
+​
+ , 
+𝑞
+1
+→
+𝑎
+𝑞
+1
+q 
+1
+​
+  
+a
+​
+ q 
+1
+​
+ 
+𝑞
+1
+q 
+1
+​
+ : Accepting state.
+Find the equivalent Regular Expression.
+Convert Regular Expression to NFA:
+
+Given the Regular Expression: 
+(
+𝑎
++
+𝑏
+)
+∗
+𝑎
+(a+b) 
+∗
+ a, construct an NFA.
+Convert NFA to DFA:
+
+Given the NFA:
+States: 
+𝑞
+0
+,
+𝑞
+1
+,
+𝑞
+2
+q 
+0
+​
+ ,q 
+1
+​
+ ,q 
+2
+​
+ 
+Transitions:
+𝑞
+0
+→
+𝑎
+𝑞
+1
+q 
+0
+​
+  
+a
+​
+ q 
+1
+​
+ , 
+𝑞
+0
+→
+𝑏
+𝑞
+2
+q 
+0
+​
+  
+b
+​
+ q 
+2
+​
+ 
+𝑞
+1
+→
+𝑎
+𝑞
+1
+q 
+1
+​
+  
+a
+​
+ q 
+1
+​
+ , 
+𝑞
+1
+→
+𝑏
+𝑞
+2
+q 
+1
+​
+  
+b
+​
+ q 
+2
+​
+ 
+𝑞
+2
+→
+𝑏
+𝑞
+2
+q 
+2
+​
+  
+b
+​
+ q 
+2
+​
+ , 
+𝑞
+2
+→
+𝑎
+𝑞
+1
+q 
+2
+​
+  
+a
+​
+ q 
+1
+​
+ 
+𝑞
+1
+q 
+1
+​
+ : Accepting state.
+Construct an equivalent DFA.
+Convert NFA to Regular Expression:
+
+States: 
+𝑞
+0
+,
+𝑞
+1
+,
+𝑞
+2
+q 
+0
+​
+ ,q 
+1
+​
+ ,q 
+2
+​
+ 
+Transitions:
+𝑞
+0
+→
+𝑎
+𝑞
+1
+q 
+0
+​
+  
+a
+​
+ q 
+1
+​
+ , 
+𝑞
+1
+→
+𝑏
+𝑞
+2
+q 
+1
+​
+  
+b
+​
+ q 
+2
+​
+ 
+𝑞
+0
+→
+𝜀
+𝑞
+2
+q 
+0
+​
+  
+ε
+​
+ q 
+2
+​
+ , 
+𝑞
+2
+q 
+2
+​
+ : Accepting state.
+Find the Regular Expression.
+Language Verification
+Prove that the language 
+𝐿
+=
+{
+𝑤
+∈
+{
+𝑎
+,
+𝑏
+}
+∗
+∣
+𝑤
+ ends with 
+"
+𝑎
+𝑎
+"
+}
+L={w∈{a,b} 
+∗
+ ∣w ends with "aa"} is regular by:
+
+Constructing a DFA for 
+𝐿
+L.
+Writing a Regular Expression for 
+𝐿
+L.
+Construct a Regular Expression for the language 
+𝐿
+=
+{
+𝑤
+∈
+{
+0
+,
+1
+}
+∗
+∣
+𝑤
+ contains 
+"
+101
+"
+}
+L={w∈{0,1} 
+∗
+ ∣w contains "101"}.
+
+Kleene’s Theorem Applications
+Using Kleene’s Theorem, construct an NFA for the Regular Expression 
+(
+𝑎
++
+𝑏
+)
+∗
+𝑎
+𝑏
+(
+𝑎
++
+𝑏
+)
+∗
+(a+b) 
+∗
+ ab(a+b) 
+∗
+ .
+
+Prove the equivalence of the following DFA and Regular Expression:
+
+Regular Expression: 
+𝑏
+∗
+𝑎
+𝑏
+b 
+∗
+ ab.
+DFA:
+States: 
+𝑞
+0
+,
+𝑞
+1
+,
+𝑞
+2
+q 
+0
+​
+ ,q 
+1
+​
+ ,q 
+2
+​
+ 
+Transitions:
+𝑞
+0
+→
+𝑏
+𝑞
+0
+q 
+0
+​
+  
+b
+​
+ q 
+0
+​
+ , 
+𝑞
+0
+→
+𝑎
+𝑞
+1
+q 
+0
+​
+  
+a
+​
+ q 
+1
+​
+ 
+𝑞
+1
+→
+𝑏
+𝑞
+2
+q 
+1
+​
+  
+b
+​
+ q 
+2
+​
+ , 
+𝑞
+2
+q 
+2
+​
+ : Accepting state.
+Convert the Regular Expression 
+𝑎
+∗
++
+𝑏
+∗
+a 
+∗
+ +b 
+∗
+  into a DFA.
+
+Construct a DFA for the language 
+𝐿
+=
+{
+𝑤
+∈
+{
+𝑎
+,
+𝑏
+}
+∗
+∣
+𝑤
+ starts and ends with 
+"
+𝑏
+"
+}
+L={w∈{a,b} 
+∗
+ ∣w starts and ends with "b"}, and derive its Regular Expression.
+
+Challenge Problems
+Find the Regular Expression for the language 
+𝐿
+=
+{
+𝑤
+∈
+{
+𝑎
+,
+𝑏
+}
+∗
+∣
+𝑤
+ has an even number of 
+𝑎
+’s
+}
+L={w∈{a,b} 
+∗
+ ∣w has an even number of a’s}.
+
+Prove that 
+𝐿
+=
+{
+𝑤
+∈
+{
+𝑎
+,
+𝑏
+}
+∗
+∣
+𝑤
+ does not contain the substring 
+"
+𝑎
+𝑎
+"
+}
+L={w∈{a,b} 
+∗
+ ∣w does not contain the substring "aa"} is regular by:
+
+Constructing an NFA for 
+𝐿
+L.
+Deriving its Regular Expression.

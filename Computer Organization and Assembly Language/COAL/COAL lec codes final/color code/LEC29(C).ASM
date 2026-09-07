@@ -1,0 +1,23 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+.CODE
+MAIN PROC 
+    MOV AX,0B800H
+    MOV DS,AX 
+    
+    MOV DI,0  
+    MOV CX,2001
+    
+BUFFER:    
+    MOV [DI],0BF41H 
+    ADD DI,2
+    LOOP BUFFER
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN
+    
+    

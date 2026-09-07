@@ -1,0 +1,27 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV CX,09
+    
+    @LOOP:
+    CMP CX,0;XOR CX,0
+    JZ EXIT
+    
+    MOV AH,01
+    INT 21H
+    
+    DEC CX
+    JMP @LOOP
+    
+    EXIT:
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

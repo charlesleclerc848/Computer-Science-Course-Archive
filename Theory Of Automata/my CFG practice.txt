@@ -1,0 +1,127 @@
+question : (a+b)^*
+A->aA
+A->bA
+A->null
+
+question : b*
+S->bS
+S->null
+
+question : All words that start with a.
+
+R.E=a(a+b)^*
+S->aB
+B->aB
+B->bB
+B->null
+
+question : All wordsthat end with b.
+R.E=(a+b)^* b
+
+S->Bb
+B->aB
+B->bB
+B->null
+
+question : All words that contain aa.
+R.E= (a+b)^* aa (a+b)^*
+S->ABA
+A->aA
+A->bA
+A->null
+B->aa
+
+question : All words that start and end with same letter's.
+
+R.E=a(a+b)^*a+ b(a+b)^* b+ (a+b)
+
+S->ACA
+S->BCB
+S->a
+S->b
+A->a
+B->b
+C->aC
+C->bC
+C->null
+
+question : All words that start and end with different letters.
+R.E: a(a+b)^* b + b(a+b)*a
+
+S->aCb
+S->bCa
+S->ab
+s->ba
+C->aC
+C->bC
+C->null
+
+question : All words that have even length 
+R.E=((a+b)(a+b))^*
+S->XS
+X->AA
+A->a
+A->b
+S->null
+
+question : All words that have odd length.
+
+R.E=(a+b)+(a+b)((a+b)(a+b))^*
+S->a
+S->b
+S->AX
+A->a
+A->b
+X->AAX
+X->null
+
+
+question : All words that contain 01 as substring.
+R.E= (0+1)^* 01 (0+1)^*
+
+S->ABA
+B->01
+A->1A
+A->0A
+A->null
+
+question : All words that contain at least 3 zero's.
+S->ABABABA
+A->0A
+A->1A
+A->null
+B->0
+
+question : All words that contain exactly 3 zero's
+S->ABABABA
+B->0
+A->1A
+A->null
+
+question : Palindrome
+
+S->aSa
+S->bSb
+S->a
+S->b
+S->null
+
+
+
+question : L=a^* b^*
+
+S->aSb
+S->null
+
+question : L=a^n b^2n  where n={0,1,2,3,...}
+S->aSbb
+S->null
+
+question : L=a^n b^*2n c^*m    where n,m={1,2,3,...}
+S->AB
+A->aAbb
+B->cB
+B->c
+A->null
+
+

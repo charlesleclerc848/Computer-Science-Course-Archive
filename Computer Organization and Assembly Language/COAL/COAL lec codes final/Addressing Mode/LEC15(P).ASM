@@ -1,0 +1,35 @@
+.MODEL SMALL
+.STACK 100H
+.DATA    
+
+ARRAY DB "hello$"
+LEN EQU $-ARRAY-1
+STRING2 DB "YASIN NASIR$"
+LEN2 EQU $-STRING2
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV BX,OFFSET ARRAY ; LEA BX,ARRAY
+    MOV CL,LEN
+@LOOP:
+    CMP CL,0
+    JZ EXIT 
+    MOV DL,[BX]
+    MOV AH,02
+    INT 21H
+    
+    INC BX
+    DEC CL
+    JMP @LOOP
+    
+    
+    
+    EXIT:
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN
+

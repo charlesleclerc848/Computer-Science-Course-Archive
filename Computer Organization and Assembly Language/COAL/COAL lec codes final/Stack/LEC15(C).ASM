@@ -1,0 +1,42 @@
+.MODEL SMALL
+.STACK 100H
+
+.DATA 
+
+VAR1 DB 39H,38H,37H
+
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX 
+    
+    XOR CL,CL
+    MOV BX,OFFSET VAR1
+@LOOP:
+    CMP CL,2
+    JA EXIT
+    MOV DL,[BX]
+    MOV AH,02
+    INT 21H
+    INC BX
+    INC CL
+    
+    JMP @LOOP  
+EXIT:
+    SUB BX,2
+    
+    MOV BX,781EH
+    MOV DX,34ABH
+    
+    PUSH BX
+    PUSH DX
+    
+    POP AX
+    POP BX 
+  
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

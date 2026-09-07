@@ -1,0 +1,37 @@
+.MODEL SMALL  
+.STACK 100H
+.DATA
+STRING1 DB "INPUT ONLY 9 CHARCTERS $"
+NEWLINE DB 0AH,0DH,"$"
+
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    
+    MOV AH,09
+    MOV DX,OFFSET STRING1
+    INT 21H
+    
+    MOV AH,09
+    MOV DX,OFFSET NEWLINE
+    INT 21H 
+    
+    MOV CX,09
+    @LOOP:
+    XOR CX,0
+    JZ EXIT
+    
+    MOV AH,01H
+    INT 21H
+    
+    DEC CX
+    JMP @LOOP
+    
+    
+    EXIT:
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

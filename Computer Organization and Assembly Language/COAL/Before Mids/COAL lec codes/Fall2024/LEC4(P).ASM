@@ -1,0 +1,28 @@
+.MODEL SMALL
+.STACK
+
+.DATA
+
+.CODE
+
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    MOV AX,17H
+    MOV AX,23ABH
+    MOV AX, 0FA3FH
+    
+    ;MOV DS,0175  CONSTANT CAN NOT BE MOVED TO SEGMENT DIRECTLY
+    
+    MOV BX,AX
+    
+    
+    
+    
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

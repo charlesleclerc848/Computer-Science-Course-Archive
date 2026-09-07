@@ -1,0 +1,31 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+
+STRING1 DB "SECTION P$"
+LEN EQU $-STRING1
+
+.CODE 
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    ;MOV ES,AX 
+    
+    MOV CX,LEN-1
+    
+    LEA SI,STRING1
+    CLD
+    MOV AH,02
+@LOOP:    
+    LODSB 
+    MOV DL,AL
+    INT 21H
+    LOOP @LOOP
+    
+MOV AH,4CH
+INT 21H
+
+MAIN ENDP
+END MAIN
+    

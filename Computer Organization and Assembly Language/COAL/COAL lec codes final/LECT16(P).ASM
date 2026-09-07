@@ -1,0 +1,130 @@
+.MODEL SMALL
+.STACK 100
+.DATA
+
+STRING1 DB "@Mid Exam F24$" 
+LEN EQU $-STRING1-1  
+
+STRING2 DB "SPECIAL CHARCTER $"
+STRING3 DB "NUMERIC VALUE $"
+STRING4 DB "CAPITAL ALPHABET $"
+STRING5 DB "SMALL ALPHABET $"
+
+N DB 0
+C DB 0
+S DB 0  
+NEWLINE DB 0AH,0DH,"$"
+NCOUNT DB "NUMERIC VALUES = $"
+CCOUNT DB "CAPITAL LETTERS = $"
+SCOUNT DB "SMALL LETTER = $"
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX 
+    
+    MOV BX,OFFSET STRING1
+    
+    MOV CX,LEN
+@LOOP:    
+    MOV AL,[BX]
+    
+    CMP AL,"0"
+    JB SPECIAL
+    
+    CMP AL,"9"
+    JBE NUMERIC
+    
+    CMP AL,"A"
+    JB SPECIAL
+    
+    CMP AL,"Z"
+    JBE CAPITAL
+    
+    CMP AL,"a"
+    JB SPECIAL
+    
+    CMP AL,"z"
+    JBE SMALL 
+    
+    SPECIAL:
+    MOV AH,09
+    MOV DX,OFFSET STRING2
+    INT 21H 
+    JMP EXIT
+    
+    CAPITAL:
+    INC C  
+    MOV AH,09
+    MOV DX,OFFSET STRING4
+    INT 21H
+    JMP EXIT
+    
+    
+    NUMERIC:
+    INC N
+    MOV AH,09
+    MOV DX,OFFSET STRING3
+    INT 21H
+    JMP EXIT
+    
+    SMALL:
+    INC S
+    MOV AH,09
+    MOV DX,OFFSET STRING5
+    INT 21H
+    EXIT:
+    INC BX
+    LOOP @LOOP
+    
+    MOV AH,09
+    MOV DX,OFFSET NEWLINE
+    INT 21H
+    
+    MOV AH,09
+    MOV DX, OFFSET NCOUNT
+    INT 21H
+    
+    MOV DL,N
+    ADD DL,"0"
+    MOV AH,02
+    INT 21H
+    
+    MOV AH,09
+    MOV DX,OFFSET NEWLINE
+    INT 21H
+    
+    MOV AH,09
+    MOV DX, OFFSET SCOUNT
+    INT 21H
+    
+    MOV DL,S
+    ADD DL,"0"
+    MOV AH,02
+    INT 21H
+    
+    MOV AH,09
+    MOV DX,OFFSET NEWLINE
+    INT 21H
+    
+    MOV AH,09
+    MOV DX, OFFSET CCOUNT
+    INT 21H
+    
+    MOV DL,C
+    ADD DL,"0"; 0R ADD 30H
+    MOV AH,02
+    INT 21H
+    
+    
+    MOV AH,4CH
+    INT 21H
+    
+MAIN ENDP
+END MAIN
+    
+    
+    
+    
+    
+    

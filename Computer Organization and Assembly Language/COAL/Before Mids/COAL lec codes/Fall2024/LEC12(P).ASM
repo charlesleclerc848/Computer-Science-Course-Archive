@@ -1,0 +1,63 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+
+STRING1 DB "INPUT A SINGLE CHARACTER$"
+STRING2 DB "INPUT IS NUMERIC$"
+STRING3 DB "INPUT IS NOT NUMERIC$"
+NEWLINE DB 0AH,0DH,"$"
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    @LOOP:
+    MOV AH,09
+    MOV DX, OFFSET STRING1
+    INT 21H
+    
+    MOV AH,09
+    MOV DX, OFFSET NEWLINE
+    INT 21H
+    
+    MOV AH,01
+    INT 21H
+    MOV BL,AL 
+    
+    MOV AH,09
+    MOV DX,OFFSET NEWLINE
+    INT 21H
+    
+    MOV AL,BL    
+    CMP AL,"0"
+    JB NOTNUMERIC
+    
+    CMP AL,"9"
+    JBE NUMERIC 
+    
+    JMP NOTNUMERIC
+    
+    
+    NUMERIC:
+    MOV AH,09
+    MOV DX,OFFSET STRING2
+    INT 21H
+    
+    JMP EXIT  
+    
+    
+    NOTNUMERIC:
+    MOV AH,09
+    MOV DX,OFFSET STRING3
+    INT 21H
+    
+    EXIT:
+    CMP BL," "
+    JNZ @LOOP 
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

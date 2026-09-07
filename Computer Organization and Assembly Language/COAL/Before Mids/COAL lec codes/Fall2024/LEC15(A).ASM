@@ -1,0 +1,37 @@
+.MODEL SMALL 
+.STACK 100H
+.DATA  
+STRING1 DB "HELLO WOD$"
+LEN EQU $-STRING1-1
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX 
+    
+    MOV DL,LEN
+    ADD DL,"0"
+    MOV AH,02
+    INT 21H 
+    
+    MOV AX,23ABH
+    MOV BX,45EFH
+    
+    PUSH AX
+    PUSH BX
+    
+    POP CX
+    POP DX
+    
+    MOV DX,67ADH
+    PUSH DX
+    
+    
+    
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

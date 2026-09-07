@@ -1,0 +1,63 @@
+
+
+
+
+
+2NF-> 1stNF + There should be no partial dependency in the table.
+
+partial dependency------> FD: Proper subset of CK -> Non-prime attribute
+
+
+Proper subset of CK--------------> CK------------> superkey--------> closureSet.
+			PA,NPA
+
+	R(A B C D E F)
+	FD: {A->B, B->C, C->D, D->E}
+	ByTrans	A->C,	A->D,	A->E
+		
+	ABCDEF+ ={A B C D E F}
+SK	AF+={A B C D E F}
+CK	{A F}
+
+PA	{A,F}
+NPA	{B, C, D, E}
+	
+	A+={A B C D E}  NaSK
+	F+={F} NaSK
+
+Partial Dependencies {A->B}
+
+Not in 2nd NF due to Partial Dependencies {A->B}
+
+
+=======================================================================================================
+
+
+	R(A B C D)
+	FD: {AB->CD, C->A, D->B}
+	ByTrans	
+		
+	ABCD+ ={A B C D}
+SK	AB+ ={A B C D}
+CK	{A B,	C B, A D}						A B
+	A+={A}	NaSK
+	B+={B}	NaSK
+
+SK	CB	------------------>		CK
+	C+={C A }NaSK
+	B+={B}	NaSK
+
+SK	AD	------------------->		CK
+	A+={A}	NaSK
+	D+={DB}	NaSK
+
+
+
+PA={A,B,C,D}	
+NPA={}
+
+this table is in 2nd NF.
+	
+
+
+

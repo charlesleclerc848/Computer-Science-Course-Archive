@@ -1,0 +1,48 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+         ;ABCDEFGHIJKLMNOPQRSTUVWXYZ
+TABLE DB "XQPOGHZBCADEIJUVFMNKLRSTWY"
+ 
+NEW_LINE DB 0D,0AH,"$"  
+
+CODED_MSG DB 60 DUP("$") 
+
+
+
+.CODE
+MAIN PROC 
+    MOV AX,@DATA
+    MOV DS,AX
+                  
+    LEA DI,CODED_MSG              
+    LEA BX,TABLE
+@LOOP:    
+    MOV AH,01
+    INT 21H 
+    
+    CMP AL,0DH
+    JE @DISPLAY
+    
+    SUB AL,"A"     
+    XLAT
+    
+    MOV [DI],AL
+    INC DI 
+    JMP @LOOP
+    
+    LEA DX,NEW_LINE
+    MOV AH,09
+    INT 21H
+@DISPLAY:
+    LEA DX,CODED_MSG
+    MOV AH,09
+    INT 21H
+    
+    
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

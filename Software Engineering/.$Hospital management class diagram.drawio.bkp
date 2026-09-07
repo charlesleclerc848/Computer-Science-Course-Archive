@@ -1,0 +1,40 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
+  <diagram name="Hospital Class Diagram V2" id="6t10miD23-mg75Nyytnv">
+    <mxGraphModel dx="788" dy="524" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-1" value="&lt;&lt;Class&gt;&gt; Hospital\n----------------------\nname : String\naddress : String\n----------------------\nadmitPatient()\ndischargePatient()" style="shape=umlClass;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-2" value="&lt;&lt;Class&gt;&gt; Doctor\n----------------------\ndoctorId : String\nspecialization : String\n----------------------\ndiagnose()\nprescribeTreatment()" style="shape=umlClass;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="480" y="50" width="200" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-3" value="&lt;&lt;Class&gt;&gt; Patient\n----------------------\npatientId : String\nname : String\ndateOfBirth : Date\n----------------------\nattendAppointment()\nviewReport()" style="shape=umlClass;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="50" y="270" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-4" value="&lt;&lt;Class&gt;&gt; Appointment\n----------------------\nappointmentId : String\ndate : Date\ntime : String\nreason : String\n----------------------\nschedule()\ncancel()" style="shape=umlClass;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="460" y="270" width="200" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-5" value="employs" style="endArrow=none;html=1;" edge="1" parent="1" source="TrN2IM2ddy4Xo2mFjBb3-1" target="TrN2IM2ddy4Xo2mFjBb3-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-6" value="1..*" style="text;html=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="240" y="85" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-7" value="treats" style="endArrow=none;html=1;" edge="1" parent="1" source="TrN2IM2ddy4Xo2mFjBb3-2" target="TrN2IM2ddy4Xo2mFjBb3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-8" value="1..*" style="text;html=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="280" y="195" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-9" value="schedules" style="endArrow=none;html=1;" edge="1" parent="1" source="TrN2IM2ddy4Xo2mFjBb3-3" target="TrN2IM2ddy4Xo2mFjBb3-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="TrN2IM2ddy4Xo2mFjBb3-10" value="1..*" style="text;html=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="190" y="325" width="40" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

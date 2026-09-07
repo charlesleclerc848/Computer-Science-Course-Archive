@@ -1,0 +1,28 @@
+.MODEL SMALL
+.STACK 100H
+.DATA
+;variables here
+
+VAR1 DB 47H
+VAR2 DB "F"
+VAR3 DB 011001010B
+VAR4 DW 23ABH
+VAR5 DD 2345EFABH
+VAR6 DW 5 DUP(47H)
+
+
+
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    
+    ;
+    
+    
+    
+    
+    MOV AH,4CH
+    INT 21H
+MAIN ENDP
+END MAIN

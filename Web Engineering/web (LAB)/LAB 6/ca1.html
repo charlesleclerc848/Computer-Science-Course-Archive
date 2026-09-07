@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap 5 CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+    body{
+        background-color: cadetblue;
+    }
+</style>
+</head>
+<body>
+<!-- Bootstrap 5 JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <div class="container">
+     <h1 class="display-2">Student Detail Form</h1>
+     <div id ="form-container" style="height: 30vh;">
+    <form action="">
+        <label for="name">Student Name</label>
+        <input type="text" id="name">
+        <label for="in_mark">Inter Marks</label>
+        <input type="text" id="in">
+        <label for="mat_mark">Matric</label>
+        <input type="text" id="mat">
+        <label for="test">Entry Test</label>
+        <input type="number" id="t">
+        
+
+        <button type="button" onclick="addrow() ; event.preventDefault();" class="btn btn-primary">Add row</button>
+    </form>
+     </div>
+        <table class="table table-bordered" id="show">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Inter Marks</th>
+                    <th>Matric</th>
+                    <th>Entry Test</th>
+                </tr>
+            </thead>
+        </table> 
+    </div>
+    <!-- Example HTML -->
+<div>
+    Aggregate: <span id="agg"></span> <br>
+    Eligible Departments: <span id="dept"></span>
+</div>
+<div class="mt-3">
+    <strong>Aggregate:</strong> <span id="agg"></span><br>
+    <strong>Eligible Departments:</strong> <span id="dept"></span>
+</div>
+
+<!-- Call this function on button click -->
+<button type="button" onclick="showAggregate()" class="btn btn-success mt-2">
+    Calculate Aggregate
+</button>
+
+    <script>
+        let n =1 ;
+        let name,sap,contact,cgpa;
+        function addrow(){
+            
+            let table= document.getElementById("show");
+            let name= document.getElementById("name").value;
+            let sap= document.getElementById("in").value;
+            let contact= document.getElementById("mat").value;
+            let cgpa= document.getElementById("t").value;
+            let row= table.insertRow(n);
+            row.insertCell(0).innerHTML=name;
+            row.insertCell(1).innerHTML=sap;
+            row.insertCell(2).innerHTML=contact;
+            row.insertCell(3).innerHTML=cgpa;
+            n++;
+     
+        }
+
+
+        function calculateAggregate(inter, matric, entry) {
+    // Ensure numbers
+    inter = parseFloat(inter);
+    matric = parseFloat(matric);
+    entry = parseFloat(entry);
+
+    if (isNaN(inter) || isNaN(matric) || isNaN(entry)) {
+        return { aggregate: 0, departments: [] };
+    }
+
+    // Calculate weighted aggregate
+    let aggregate = (0.3 * inter) + (0.2 * matric) + (0.5 * entry);
+    aggregate = parseFloat(aggregate.toFixed(2));
+
+    // Determine eligible departments
+    let departments = [];
+    if (aggregate >= 50) departments.push("Social Science");
+    if (aggregate >= 60) departments.push("AHS");
+    if (aggregate >= 70) departments.push("CS");
+    if (aggregate >= 70 && aggregate <= 80) departments.push("Medical");
+
+    return { aggregate, departments };
+}
+
+function showAggregate() {
+    // Get values from form/table inputs
+    let inter = document.getElementById("in").value;
+    let matric = document.getElementById("mat").value;
+    let entry = document.getElementById("t").value;
+
+    // Call aggregate calculator
+    let result = calculateAggregate(inter, matric, entry);
+
+    // Display result on page
+    document.getElementById("agg").innerText = result.aggregate + "%";
+    document.getElementById("dept").innerText = result.departments.join(", ");
+}
+
+    </script>
+    
+</body>
+</html>
