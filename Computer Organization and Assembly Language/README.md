@@ -22,7 +22,7 @@ x86 Assembly (MASM/EMU8086) — theory slides, lecture ASM code by topic, past p
 - [String Operations](COAL/COAL%20lec%20codes%20final/String%20Operations)
 
 **Software / Setup**
-- [DosBox + MASM + EMU8086](COAL/COAL/COAL%20Softwares)
+- [DosBox + MASM + EMU8086](COAL/COAL%20Softwares)
 
 **Reference**
 - [COAL textbook](COAL/Coal%20Book)
